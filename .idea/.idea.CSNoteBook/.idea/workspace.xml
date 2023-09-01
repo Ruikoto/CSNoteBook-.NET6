@@ -7,9 +7,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a0b4afd5-bac8-4e60-a52c-0606aa7ac4fa" name="更改" comment="Service Layer Update">
-      <change afterPath="$PROJECT_DIR$/CSNoteBook/packages.config" afterDir="false" />
+    <list default="true" id="a0b4afd5-bac8-4e60-a52c-0606aa7ac4fa" name="更改" comment="update">
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.CSNoteBook/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.CSNoteBook/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CSNoteBook.sln.DotSettings.user" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CSNoteBook/Utils/GetDaoUtil.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notebook.sqlite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CSNoteBook/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CSNoteBook/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSNoteBook/App.config" beforeDir="false" afterPath="$PROJECT_DIR$/CSNoteBook/App.config" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CSNoteBook/CSNoteBook.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CSNoteBook/CSNoteBook.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSNoteBook/Dao/INoteBookDao.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CSNoteBook/Dao/INoteBookDao.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSNoteBook/Dao/NoteBookDao.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CSNoteBook/Dao/NoteBookDao.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSNoteBook/Models/Note.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CSNoteBook/Models/Note.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSNoteBook/Services/INoteBookService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CSNoteBook/Services/INoteBookService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSNoteBook/Services/NoteBookService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CSNoteBook/Services/NoteBookService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSNoteBook/packages.config" beforeDir="false" afterPath="$PROJECT_DIR$/CSNoteBook/packages.config" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,8 +72,10 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
@@ -70,10 +84,13 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "settings.qodana",
+    "settings.editor.selected.configurable": "fileTemplates",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "sqlite"
+    ],
     "rider.external.source.directories": [
       "C:\\Users\\zhenyu.zhang\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\DecompilerCache",
       "C:\\Users\\zhenyu.zhang\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\SourcesCache",
@@ -82,9 +99,21 @@
   }
 }]]></component>
   <component name="QodanaCloudProjectLink">
+    <option name="lastReportId" value="dEMm8" />
     <option name="linkedProjectId" value="37Pl4" />
     <option name="linkedProjectName" value="CSNoteBook" />
     <option name="organizationId" value="3eGZ2" />
+  </component>
+  <component name="QodanaHighlightedReportService">
+    <option name="cloudReportPersistedInfo">
+      <CloudReportPersistedInfo>
+        <option name="projectId" value="37Pl4" />
+        <option name="reportId" value="dEMm8" />
+      </CloudReportPersistedInfo>
+    </option>
+  </component>
+  <component name="QodanaIsSelectedPersistenceService">
+    <option name="selectedOrLoading" value="true" />
   </component>
   <component name="RunManager">
     <configuration name="CSNoteBook" type="DotNetProject" factoryName=".NET Project">
@@ -116,7 +145,7 @@
       <updated>1693530565502</updated>
       <workItem from="1693530566841" duration="638000" />
       <workItem from="1693531223940" duration="672000" />
-      <workItem from="1693531914230" duration="3781000" />
+      <workItem from="1693531914230" duration="6360000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -142,7 +171,15 @@
       <option name="project" value="LOCAL" />
       <updated>1693535401320</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="update">
+      <option name="closed" value="true" />
+      <created>1693535762763</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1693535762763</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -164,9 +201,9 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="init" />
-    <MESSAGE value="update" />
     <MESSAGE value="Service Layer Update" />
-    <option name="LAST_COMMIT_MESSAGE" value="Service Layer Update" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

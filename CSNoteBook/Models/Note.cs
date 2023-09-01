@@ -6,6 +6,6 @@ namespace CSNoteBook.Models
     {
         public int Id { get; private set; }
         public string Title { get; set; }
-        public string Context { get; set; }
+        public string Content { get; set; }
     }
 }

@@ -5,8 +5,8 @@ namespace CSNoteBook.DAO
 {
     public interface INoteBookDao
     {
-        int NewNote(string title, string context);
-        int EditNote(int id, string title, string context);
+        int NewNote(string title, string content);
+        int EditNote(int id, string title, string content);
         int GetNewIndex();
         void DeleteNote(int id);
         bool IsNoteExist(int id);
