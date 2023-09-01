@@ -15,7 +15,11 @@ namespace CSNoteBook.DAO
         {
             Conn.Open();
             using (var cmd = new SQLiteCommand(
-                       "CREATE TABLE IF NOT EXISTS notebooks (id INTEGER PRIMARY KEY, title TEXT, content TEXT)",
+                       "CREATE TABLE IF NOT EXISTS data (" +
+                       "id INTEGER PRIMARY KEY, " +
+                       "is_checked INTEGER, " +
+                       "content TEXT," +
+                       "title TEXT)",
                        Conn))
             {
                 cmd.ExecuteNonQuery();
@@ -105,6 +109,7 @@ namespace CSNoteBook.DAO
                     note.Content = sqLiteDataReader.IsDBNull(2) ? null : sqLiteDataReader.GetString(2);
                 }
             }
+
             Conn.Close();
             return note;
         }
@@ -130,6 +135,7 @@ namespace CSNoteBook.DAO
                     }
                 }
             }
+
             Conn.Close();
             return notes;
         }
@@ -149,6 +155,7 @@ namespace CSNoteBook.DAO
                     }
                 }
             }
+
             Conn.Close();
             return list;
         }

@@ -7,15 +7,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a0b4afd5-bac8-4e60-a52c-0606aa7ac4fa" name="更改" comment="TestClass &amp; First Dao Method">
+    <list default="true" id="a0b4afd5-bac8-4e60-a52c-0606aa7ac4fa" name="更改" comment="Dao/Service Finish">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CSNoteBook/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CSNoteBook/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSNoteBook/Dao/INoteBookDao.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CSNoteBook/Dao/INoteBookDao.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CSNoteBook/Dao/NoteBookDao.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CSNoteBook/Dao/NoteBookDao.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSNoteBook/MainWindow.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CSNoteBook/MainWindow.xaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CSNoteBook/Models/Note.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CSNoteBook/Models/Note.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CSNoteBook/Services/INoteBookService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CSNoteBook/Services/INoteBookService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CSNoteBook/Services/NoteBookService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CSNoteBook/Services/NoteBookService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CSNoteBook/Test/Test.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CSNoteBook/Test/Test.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notebook.sqlite" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +45,8 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7cca5dc405b64b51b240c999be0beef0696b0/13/9232f461/SQLiteCommand.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7cca5dc405b64b51b240c999be0beef0696b0/94/e87d1d24/SQLiteConnection.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/ce12dc1aa9e14b919d8c1321c95d47fb35e718/b1/6af48462/Uri.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/zhenyu.zhang/RiderProjects/CSNoteBook/CSNoteBook/Dao/INoteBookDao.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/zhenyu.zhang/RiderProjects/CSNoteBook/CSNoteBook/Dao/INoteBookDao.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/zhenyu.zhang/RiderProjects/CSNoteBook/CSNoteBook/MainWindow.xaml" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/zhenyu.zhang/RiderProjects/CSNoteBook/CSNoteBook/MainWindow.xaml" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/zhenyu.zhang/RiderProjects/CSNoteBook/CSNoteBook/MainWindow.xaml" root0="SKIP_HIGHLIGHTING" />
@@ -84,7 +85,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "fileTemplates",
+    "settings.editor.selected.configurable": "settings.qodana",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -99,7 +100,7 @@
   }
 }]]></component>
   <component name="QodanaCloudProjectLink">
-    <option name="lastReportId" value="BBlOg" />
+    <option name="lastReportId" value="EDQeN" />
     <option name="linkedProjectId" value="37Pl4" />
     <option name="linkedProjectName" value="CSNoteBook" />
     <option name="organizationId" value="3eGZ2" />
@@ -108,7 +109,7 @@
     <option name="cloudReportPersistedInfo">
       <CloudReportPersistedInfo>
         <option name="projectId" value="37Pl4" />
-        <option name="reportId" value="BBlOg" />
+        <option name="reportId" value="EDQeN" />
       </CloudReportPersistedInfo>
     </option>
   </component>
@@ -136,6 +137,9 @@
     </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\zhenyu.zhang\AppData\Roaming\Subversion</configuration>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="默认任务">
       <changelist id="a0b4afd5-bac8-4e60-a52c-0606aa7ac4fa" name="更改" comment="" />
@@ -145,7 +149,7 @@
       <updated>1693530565502</updated>
       <workItem from="1693530566841" duration="638000" />
       <workItem from="1693531223940" duration="672000" />
-      <workItem from="1693531914230" duration="15791000" />
+      <workItem from="1693531914230" duration="17838000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -195,7 +199,15 @@
       <option name="project" value="LOCAL" />
       <updated>1693547345208</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Dao/Service Finish">
+      <option name="closed" value="true" />
+      <created>1693557883183</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1693557883183</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -221,26 +233,8 @@
     <MESSAGE value="update" />
     <MESSAGE value="DaoFactory &amp; Sqlite Init" />
     <MESSAGE value="TestClass &amp; First Dao Method" />
-    <option name="LAST_COMMIT_MESSAGE" value="TestClass &amp; First Dao Method" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/CSNoteBook/Dao/NoteBookDao.cs</url>
-          <line>122</line>
-          <properties documentPath="C:\Users\zhenyu.zhang\RiderProjects\CSNoteBook\CSNoteBook\Dao\NoteBookDao.cs" initialLine="122" containingFunctionPresentation="方法 'GetAllNote'">
-            <startOffsets>
-              <option value="4051" />
-            </startOffsets>
-            <endOffsets>
-              <option value="4323" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Dao/Service Finish" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dao/Service Finish" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
