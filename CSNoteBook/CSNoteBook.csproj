@@ -51,6 +51,10 @@
             <Generator>MSBuild:Compile</Generator>
             <SubType>Designer</SubType>
         </ApplicationDefinition>
+        <Compile Include="Dao\INoteBookDao.cs" />
+        <Compile Include="Dao\NoteBookDao.cs" />
+        <Compile Include="Models\Note.cs" />
+        <Compile Include="Services\INoteBookService.cs" />
         <Compile Include="Services\NoteBookService.cs" />
         <Page Include="MainWindow.xaml">
             <Generator>MSBuild:Compile</Generator>
@@ -83,7 +87,6 @@
         <None Include="App.config"/>
     </ItemGroup>
     <ItemGroup>
-      <Folder Include="Models\" />
       <Folder Include="ViewModels\" />
       <Folder Include="Views\" />
     </ItemGroup>

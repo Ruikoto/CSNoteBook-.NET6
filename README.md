@@ -47,7 +47,7 @@
 7. **版本控制**
     - 使用Git进行版本控制。
 
-### 学习资源
+# 学习资源
 - WPF教程或书籍
 - MVVM框架的文档和教程
 - Entity Framework或SQLite的使用教程

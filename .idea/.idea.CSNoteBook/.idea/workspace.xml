@@ -7,13 +7,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a0b4afd5-bac8-4e60-a52c-0606aa7ac4fa" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/.github/workflows/qodana_code_quality.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSNoteBook/Services/NoteBookService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qodana.yaml" afterDir="false" />
+    <list default="true" id="a0b4afd5-bac8-4e60-a52c-0606aa7ac4fa" name="更改" comment="update">
+      <change afterPath="$PROJECT_DIR$/CSNoteBook/Dao/INoteBookDao.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CSNoteBook/Dao/NoteBookDao.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CSNoteBook/Models/Note.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CSNoteBook/Services/INoteBookService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CSNoteBook/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CSNoteBook/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CSNoteBook/CSNoteBook.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CSNoteBook/CSNoteBook.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CSNoteBook/MainWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/CSNoteBook/MainWindow.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSNoteBook/Services/NoteBookService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CSNoteBook/Services/NoteBookService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +39,10 @@
         <option name="url" value="git@github.com:Ruikoto/CSNoteBook.git" />
       </UrlAndAccount>
     </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock://C:/Users/zhenyu.zhang/RiderProjects/CSNoteBook/CSNoteBook/MainWindow.xaml" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/zhenyu.zhang/RiderProjects/CSNoteBook/CSNoteBook/MainWindow.xaml" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -113,7 +120,7 @@
       <updated>1693530565502</updated>
       <workItem from="1693530566841" duration="638000" />
       <workItem from="1693531223940" duration="672000" />
-      <workItem from="1693531914230" duration="173000" />
+      <workItem from="1693531914230" duration="3355000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -123,7 +130,15 @@
       <option name="project" value="LOCAL" />
       <updated>1693531246640</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="update">
+      <option name="closed" value="true" />
+      <created>1693532126797</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1693532126797</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -144,7 +159,8 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="init" />
-    <option name="LAST_COMMIT_MESSAGE" value="init" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
