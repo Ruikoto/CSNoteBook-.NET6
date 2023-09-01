@@ -1,4 +1,6 @@
-﻿namespace CSNoteBook
+﻿using CSNoteBook.Test;
+
+namespace CSNoteBook
 {
   /// <summary>
   /// Interaction logic for MainWindow.xaml
@@ -8,6 +10,8 @@
     public MainWindow()
     {
       InitializeComponent();
+      Test.Test.TestMethod(null);
     }
+
   }
 }

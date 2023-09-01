@@ -7,21 +7,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a0b4afd5-bac8-4e60-a52c-0606aa7ac4fa" name="更改" comment="update">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.CSNoteBook/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.CSNoteBook/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSNoteBook.sln.DotSettings.user" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSNoteBook/Utils/GetDaoUtil.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notebook.sqlite" afterDir="false" />
+    <list default="true" id="a0b4afd5-bac8-4e60-a52c-0606aa7ac4fa" name="更改" comment="DaoFactory &amp; Sqlite Init">
+      <change afterPath="$PROJECT_DIR$/CSNoteBook/Test/Test.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CSNoteBook/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CSNoteBook/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CSNoteBook/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CSNoteBook/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSNoteBook/App.config" beforeDir="false" afterPath="$PROJECT_DIR$/CSNoteBook/App.config" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CSNoteBook/CSNoteBook.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CSNoteBook/CSNoteBook.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSNoteBook/Dao/INoteBookDao.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CSNoteBook/Dao/INoteBookDao.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CSNoteBook/Dao/NoteBookDao.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CSNoteBook/Dao/NoteBookDao.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSNoteBook/Models/Note.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CSNoteBook/Models/Note.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSNoteBook/Services/INoteBookService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CSNoteBook/Services/INoteBookService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSNoteBook/Services/NoteBookService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CSNoteBook/Services/NoteBookService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSNoteBook/MainWindow.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CSNoteBook/MainWindow.xaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CSNoteBook/packages.config" beforeDir="false" afterPath="$PROJECT_DIR$/CSNoteBook/packages.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notebook.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/notebook.sqlite" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +40,10 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/019600bda569445a8437d274ee241410604dc0/98/d8f126c8/WpfXamlLoader.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5cefdf7228b9490c8a4ab5c43a83379535efc0/18/74dd7b57/DbCommand.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7cca5dc405b64b51b240c999be0beef0696b0/13/9232f461/SQLiteCommand.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7cca5dc405b64b51b240c999be0beef0696b0/94/e87d1d24/SQLiteConnection.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/zhenyu.zhang/RiderProjects/CSNoteBook/CSNoteBook/MainWindow.xaml" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/zhenyu.zhang/RiderProjects/CSNoteBook/CSNoteBook/MainWindow.xaml" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/zhenyu.zhang/RiderProjects/CSNoteBook/CSNoteBook/MainWindow.xaml" root0="SKIP_HIGHLIGHTING" />
@@ -56,7 +54,7 @@
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
@@ -99,7 +97,7 @@
   }
 }]]></component>
   <component name="QodanaCloudProjectLink">
-    <option name="lastReportId" value="dEMm8" />
+    <option name="lastReportId" value="moBm0" />
     <option name="linkedProjectId" value="37Pl4" />
     <option name="linkedProjectName" value="CSNoteBook" />
     <option name="organizationId" value="3eGZ2" />
@@ -108,7 +106,7 @@
     <option name="cloudReportPersistedInfo">
       <CloudReportPersistedInfo>
         <option name="projectId" value="37Pl4" />
-        <option name="reportId" value="dEMm8" />
+        <option name="reportId" value="moBm0" />
       </CloudReportPersistedInfo>
     </option>
   </component>
@@ -117,9 +115,9 @@
   </component>
   <component name="RunManager">
     <configuration name="CSNoteBook" type="DotNetProject" factoryName=".NET Project">
-      <option name="EXE_PATH" value="" />
+      <option name="EXE_PATH" value="$PROJECT_DIR$/CSNoteBook/bin/Debug/CSNoteBook.exe" />
       <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/CSNoteBook/bin/Debug" />
       <option name="PASS_PARENT_ENVS" value="1" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <option name="USE_MONO" value="0" />
@@ -129,7 +127,7 @@
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
       <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
       <option name="PROJECT_KIND" value="Console" />
-      <option name="PROJECT_TFM" value="" />
+      <option name="PROJECT_TFM" value=".NETFramework,Version=v4.8" />
       <method v="2">
         <option name="Build" />
       </method>
@@ -145,7 +143,7 @@
       <updated>1693530565502</updated>
       <workItem from="1693530566841" duration="638000" />
       <workItem from="1693531223940" duration="672000" />
-      <workItem from="1693531914230" duration="6360000" />
+      <workItem from="1693531914230" duration="10390000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -179,7 +177,15 @@
       <option name="project" value="LOCAL" />
       <updated>1693535762763</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="DaoFactory &amp; Sqlite Init">
+      <option name="closed" value="true" />
+      <created>1693538605239</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1693538605239</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -203,7 +209,27 @@
     <MESSAGE value="init" />
     <MESSAGE value="Service Layer Update" />
     <MESSAGE value="update" />
-    <option name="LAST_COMMIT_MESSAGE" value="update" />
+    <MESSAGE value="DaoFactory &amp; Sqlite Init" />
+    <option name="LAST_COMMIT_MESSAGE" value="DaoFactory &amp; Sqlite Init" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/CSNoteBook/Dao/NoteBookDao.cs</url>
+          <line>32</line>
+          <properties documentPath="C:\Users\zhenyu.zhang\RiderProjects\CSNoteBook\CSNoteBook\Dao\NoteBookDao.cs" initialLine="29" containingFunctionPresentation="方法 'NewNote'">
+            <startOffsets>
+              <option value="842" />
+            </startOffsets>
+            <endOffsets>
+              <option value="843" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

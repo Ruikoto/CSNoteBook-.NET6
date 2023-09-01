@@ -1,33 +1,45 @@
 using System;
 using CSNoteBook.Models;
-using CSNoteBook.Services;
 using System.Data.SQLite;
-using System.IO;
-using System.Windows;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 
 namespace CSNoteBook.DAO
 {
     public class NoteBookDao : INoteBookDao
     {
-        private readonly SQLiteConnection _connection;
+        private SQLiteConnection _conn;
         private const string ConnInfo = "Data Source=notebook.sqlite;Version=3;";
 
         public NoteBookDao()
         {
-            using (_connection = new SQLiteConnection(ConnInfo))
+            Init();
+        }
+
+        private void Init()
+        {
+            _conn = new SQLiteConnection(ConnInfo);
+            _conn.Open();
+            using (var cmd = new SQLiteCommand(
+                       "CREATE TABLE IF NOT EXISTS notebooks (id INTEGER PRIMARY KEY, title TEXT, content TEXT)",
+                       _conn))
             {
-                _connection.Open();
-                using (var cmd = new SQLiteCommand("CREATE TABLE IF NOT EXISTS notebooks (id INTEGER PRIMARY KEY, title TEXT, content TEXT)", _connection))
-                {
-                    cmd.ExecuteNonQuery();
-                }
+                cmd.ExecuteNonQuery();
             }
         }
 
         public int NewNote(string title, string content)
         {
-            throw new System.NotImplementedException();
+            using (var cmd = new SQLiteCommand(
+                       "INSERT INTO notebooks(title,content)VALUES (@title,@content);" +
+                       "SELECT last_insert_rowId();", _conn))
+            {
+                cmd.Parameters.AddWithValue("@title", title);
+                cmd.Parameters.AddWithValue("@content", content);
+
+                var index = (long)cmd.ExecuteScalar();
+                return (int)index;
+            }
         }
 
         public int EditNote(int id, string title, string content)
