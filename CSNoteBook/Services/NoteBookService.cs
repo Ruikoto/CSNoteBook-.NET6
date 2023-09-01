@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using CSNoteBook.DAO;
 using CSNoteBook.Models;
 using CSNoteBook.Utils;
@@ -39,12 +40,12 @@ namespace CSNoteBook.Services
             }
         }
 
-        public Note[] GetAllNote()
+        public List<Note> GetAllNote()
         {
             return _dao.GetAllNote();
         }
 
-        public int[] GetAllNoteIndex()
+        public List<int> GetAllNoteIndex()
         {
             return _dao.GetAllNoteIndex();
         }

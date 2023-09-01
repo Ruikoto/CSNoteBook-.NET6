@@ -1,4 +1,6 @@
-﻿using CSNoteBook.Test;
+﻿using CSNoteBook.DAO;
+using CSNoteBook.Test;
+using CSNoteBook.Utils;
 
 namespace CSNoteBook
 {
@@ -10,6 +12,7 @@ namespace CSNoteBook
     public MainWindow()
     {
       InitializeComponent();
+      GetDaoFactory.GetDao().Init();
       Test.Test.TestMethod(null);
     }
 

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using CSNoteBook.Models;
 
 namespace CSNoteBook.Services
@@ -7,8 +8,8 @@ namespace CSNoteBook.Services
         int NewNote(string title = null,string content = null);
         void DeleteNote(int id);
         Note GetNote(int id);
-        Note[] GetAllNote();
-        int[] GetAllNoteIndex();
+        List<Note> GetAllNote();
+        List<int> GetAllNoteIndex();
         void EditNote(int id,string title, string content);
     }
 }
