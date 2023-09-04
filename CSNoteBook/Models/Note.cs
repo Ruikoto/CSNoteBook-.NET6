@@ -12,10 +12,12 @@ namespace CSNoteBook.Models
         public string Content { get; set; }
         public bool IsChecked { get; set; }
 
+        //无参构造
         public Note()
         {
         }
 
+        //全参构造
         public Note(int id, string title, string content, bool isChecked)
         {
             Id = id;
@@ -24,6 +26,7 @@ namespace CSNoteBook.Models
             IsChecked = isChecked;
         }
 
+        //重写ToString方法
         public override string ToString()
         {
             // ReSharper disable once ConvertIfStatementToReturnStatement
@@ -38,19 +41,13 @@ namespace CSNoteBook.Models
 
         }
 
+        //属性改变事件
         public event PropertyChangedEventHandler PropertyChanged;
 
+        //属性改变方法
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-        protected bool SetField<T>(ref T field, T value, [CallerMemberName] string propertyName = null)
-        {
-            if (EqualityComparer<T>.Default.Equals(field, value)) return false;
-            field = value;
-            OnPropertyChanged(propertyName);
-            return true;
         }
     }
 }

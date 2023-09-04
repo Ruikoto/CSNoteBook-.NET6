@@ -8,13 +8,15 @@ namespace CSNoteBook.DAO
 {
     public class NoteBookDao : INoteBookDao
     {
+        //单例模式
         private static NoteBookDao _instance;
-
         public static NoteBookDao Instance => _instance ?? (_instance = new NoteBookDao());
 
+        //数据库连接信息
         private const string ConnInfo = "Data Source=notebook.sqlite;Version=3;Pooling=True;";
         private static readonly SQLiteConnection Conn = new SQLiteConnection(ConnInfo);
 
+        //初始化数据库
         public void Init()
         {
             Conn.Open();
@@ -31,12 +33,14 @@ namespace CSNoteBook.DAO
             }
         }
 
+        //关闭数据库
         public void Close()
         {
             Conn.Close();
         }
 
-        public int NewNote(int isChecked, string title, string content)
+        //添加笔记
+        public int AddNote(int isChecked, string title, string content)
         {
             //Conn.Open();
             using (var cmd = new SQLiteCommand(
@@ -54,6 +58,7 @@ namespace CSNoteBook.DAO
             }
         }
 
+        //编辑笔记
         public void EditNote(int id, int isChecked, string title, string content)
         {
             //Conn.Open();
@@ -70,7 +75,7 @@ namespace CSNoteBook.DAO
             }
         }
 
-
+        //删除笔记
         public void DeleteNote(int id)
         {
             //Conn.Open();
@@ -83,6 +88,7 @@ namespace CSNoteBook.DAO
             }
         }
 
+        //判断笔记是否存在
         public bool IsNoteExist(int id)
         {
             //Conn.Open();
@@ -96,6 +102,7 @@ namespace CSNoteBook.DAO
             }
         }
 
+        //获取笔记
         public Note GetNote(int id)
         {
             var note = new Note();
@@ -117,6 +124,7 @@ namespace CSNoteBook.DAO
             return note;
         }
 
+        //获取所有笔记
         public List<Note> GetAllNote()
         {
             var notes = new List<Note>();
@@ -139,11 +147,11 @@ namespace CSNoteBook.DAO
                     }
                 }
             }
-
             //Conn.Close();
             return notes;
         }
 
+        //获取所有笔记的索引
         public List<int> GetAllNoteIndex()
         {
             var list = new List<int>();

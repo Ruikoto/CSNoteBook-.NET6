@@ -12,10 +12,10 @@ namespace CSNoteBook.Test
         public static void TestMethod(string[] args)
         {
             INoteBookService service = new NoteBookService();
-            service.NewNote(false,"first", "per");
-            service.NewNote(true,"2", "4680");
-            service.NewNote(true,"三");
-            service.NewNote();
+            service.AddNote(false,"first", "per");
+            service.AddNote(true,"2", "4680");
+            service.AddNote(true,"三");
+            service.AddNote();
             var allNote = service.GetAllNote();
             foreach (var note in allNote)
             {

@@ -19,6 +19,5 @@ namespace CSNoteBook.Views
             InitializeComponent();
             this.DataContext = new AddNoteViewModel();
         }
-
     }
 }
