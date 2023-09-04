@@ -9,7 +9,22 @@ namespace CSNoteBook.ViewModels
 {
     public class NotebookViewModel : INotifyPropertyChanged
     {
-        public ObservableCollection<Note> Notes { get; private set; }
+        private static NotebookViewModel _instance;
+
+        public static NotebookViewModel Instance => _instance ?? (_instance = new NotebookViewModel());
+
+        private ObservableCollection<Note> _notes;
+
+        public ObservableCollection<Note> Notes
+        {
+            get => _notes;
+            set
+            {
+                if (_notes == value) return;
+                _notes = value;
+                OnPropertyChanged("Notes");
+            }
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -23,14 +38,6 @@ namespace CSNoteBook.ViewModels
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-        protected bool SetField<T>(ref T field, T value, [CallerMemberName] string propertyName = null)
-        {
-            if (EqualityComparer<T>.Default.Equals(field, value)) return false;
-            field = value;
-            OnPropertyChanged(propertyName);
-            return true;
         }
     }
 }

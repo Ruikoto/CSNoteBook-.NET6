@@ -11,7 +11,7 @@ namespace CSNoteBook.Services
         //private static readonly INoteBookDao Dao = new NoteBookDao();
         private readonly INoteBookDao _dao = GetDaoFactory.GetDao();
 
-        public int NewNote(bool isChecked = false,string title = null,string content = null)
+        public int NewNote(bool isChecked = false,string title = "",string content = "")
         {
             var vChecked = isChecked ? 1 : 0;
             return _dao.NewNote(vChecked,title, content);

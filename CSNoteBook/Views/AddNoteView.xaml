@@ -4,9 +4,25 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CSNoteBook.Views"
-             mc:Ignorable="d" 
-             d:DesignHeight="60" d:DesignWidth="400">
+             mc:Ignorable="d"
+             d:DesignHeight="50" d:DesignWidth="400">
     <Grid>
-            
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="50"/>
+        </Grid.ColumnDefinitions>
+        <CheckBox Width="16" Height="16" HorizontalAlignment="Center" VerticalAlignment="Center" IsChecked ="{Binding Model.IsChecked}">
+            <CheckBox.LayoutTransform>
+                <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+            </CheckBox.LayoutTransform>
+        </CheckBox>
+        <TextBox x:Name="textBox" Grid.Column="1" VerticalAlignment="Center" Height="30" FontSize="24" Text="{Binding Model.Title}" />
+        <Button Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"  Height="26" Width="26" BorderBrush="{x:Null}" Command="{Binding SubmitCommand}">
+            <Button.Background>
+                <ImageBrush Stretch="Uniform" ImageSource="/Resources/add_task_FILL0_wght400_GRAD0_opsz24.png"/>
+            </Button.Background>
+        </Button>
+
     </Grid>
 </UserControl>

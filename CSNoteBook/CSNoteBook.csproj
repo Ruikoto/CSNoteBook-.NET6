@@ -35,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CommonServiceLocator, Version=2.0.2.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.2.0.2\lib\net47\CommonServiceLocator.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.EntityFrameworkCore.Abstractions, Version=2.2.6.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.EntityFrameworkCore.Abstractions.2.2.6\lib\netstandard2.0\Microsoft.EntityFrameworkCore.Abstractions.dll</HintPath>
     </Reference>
@@ -133,10 +136,12 @@
     <Compile Include="Services\NoteBookService.cs" />
     <Compile Include="Test\Test.cs" />
     <Compile Include="Utils\GetDaoFactory.cs" />
+    <Compile Include="Utils\RelayCommand.cs" />
     <Compile Include="ViewModels\NotebookViewModel.cs" />
     <Compile Include="Views\AddNoteView.xaml.cs">
       <DependentUpon>AddNoteView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\AddNoteViewModel.cs" />
     <Compile Include="Views\NoteListView.xaml.cs">
       <DependentUpon>NoteListView.xaml</DependentUpon>
     </Compile>
@@ -181,6 +186,9 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\add_task_FILL0_wght400_GRAD0_opsz24.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -26,7 +26,7 @@ namespace CSNoteBook.Views
             InitializeComponent();
 
             //绑定DataContext
-            var viewModels = new NotebookViewModel();
+            var viewModels = NotebookViewModel.Instance;
             this.DataContext = viewModels;
 
             //添加事件，窗口加载完成后加载笔记
