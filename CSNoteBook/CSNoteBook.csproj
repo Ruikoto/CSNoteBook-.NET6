@@ -135,7 +135,6 @@
     <Compile Include="Services\INoteBookService.cs" />
     <Compile Include="Services\NoteBookService.cs" />
     <Compile Include="Test\Test.cs" />
-    <Compile Include="Utils\GetDaoFactory.cs" />
     <Compile Include="Utils\RelayCommand.cs" />
     <Compile Include="ViewModels\NotebookViewModel.cs" />
     <Compile Include="Views\AddNoteView.xaml.cs">

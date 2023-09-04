@@ -8,6 +8,10 @@ namespace CSNoteBook.DAO
 {
     public class NoteBookDao : INoteBookDao
     {
+        private static NoteBookDao _instance;
+
+        public static NoteBookDao Instance => _instance ?? (_instance = new NoteBookDao());
+
         private const string ConnInfo = "Data Source=notebook.sqlite;Version=3;Pooling=True;";
         private static readonly SQLiteConnection Conn = new SQLiteConnection(ConnInfo);
 
@@ -23,13 +27,18 @@ namespace CSNoteBook.DAO
                        Conn))
             {
                 cmd.ExecuteNonQuery();
-                Conn.Close();
+                //Conn.Close();
             }
+        }
+
+        public void Close()
+        {
+            Conn.Close();
         }
 
         public int NewNote(int isChecked, string title, string content)
         {
-            Conn.Open();
+            //Conn.Open();
             using (var cmd = new SQLiteCommand(
                        "INSERT INTO noteData(is_checked,title,content)VALUES (@isChecked,@title,@content);" +
                        "SELECT last_insert_rowId();",
@@ -40,14 +49,14 @@ namespace CSNoteBook.DAO
                 cmd.Parameters.AddWithValue("@content", content);
 
                 var index = (long)cmd.ExecuteScalar();
-                Conn.Close();
+                //Conn.Close();
                 return (int)index;
             }
         }
 
         public void EditNote(int id, int isChecked, string title, string content)
         {
-            Conn.Open();
+            //Conn.Open();
             using (var cmd = new SQLiteCommand(
                        "UPDATE noteData SET is_checked = @isChecked,title = @title, content = @content WHERE id = @id"
                        , Conn))
@@ -57,46 +66,40 @@ namespace CSNoteBook.DAO
                 cmd.Parameters.AddWithValue("@title", title);
                 cmd.Parameters.AddWithValue("@content", content);
                 cmd.ExecuteNonQuery();
-                Conn.Close();
+                //Conn.Close();
             }
         }
 
 
         public void DeleteNote(int id)
         {
-            Conn.Open();
+            //Conn.Open();
             using (var cmd = new SQLiteCommand(
                        "DELETE FROM noteData WHERE id = @id", Conn))
             {
                 cmd.Parameters.AddWithValue("@id", id);
                 cmd.ExecuteNonQuery();
-                Conn.Close();
+                //Conn.Close();
             }
         }
 
         public bool IsNoteExist(int id)
         {
-            Conn.Open();
+            //Conn.Open();
             using (var cmd = new SQLiteCommand(
                        "SELECT id FROM noteData WHERE id = @id", Conn))
             {
                 cmd.Parameters.AddWithValue("@id", id);
                 var sqLiteDataReader = cmd.ExecuteReader();
-                if (sqLiteDataReader.HasRows)
-                {
-                    Conn.Close();
-                    return true;
-                }
-
-                Conn.Close();
-                return false;
+                return sqLiteDataReader.HasRows;
+                //Conn.Close();
             }
         }
 
         public Note GetNote(int id)
         {
             var note = new Note();
-            Conn.Open();
+            //Conn.Open();
             using (var cmd = new SQLiteCommand(
                        "SELECT id, is_checked, title, content FROM noteData WHERE id = @id", Conn))
             {
@@ -110,15 +113,14 @@ namespace CSNoteBook.DAO
                     note.Content = sqLiteDataReader.IsDBNull(3) ? null : sqLiteDataReader.GetString(3);
                 }
             }
-
-            Conn.Close();
+            //Conn.Close();
             return note;
         }
 
         public List<Note> GetAllNote()
         {
             var notes = new List<Note>();
-            Conn.Open();
+            //Conn.Open();
             using (var cmd = new SQLiteCommand(
                        "SELECT id, is_checked, title, content FROM noteData", Conn))
             {
@@ -138,14 +140,14 @@ namespace CSNoteBook.DAO
                 }
             }
 
-            Conn.Close();
+            //Conn.Close();
             return notes;
         }
 
         public List<int> GetAllNoteIndex()
         {
             var list = new List<int>();
-            Conn.Open();
+            //Conn.Open();
             using (var cmd = new SQLiteCommand(
                        "SELECT id FROM noteData", Conn))
             {
@@ -158,7 +160,7 @@ namespace CSNoteBook.DAO
                 }
             }
 
-            Conn.Close();
+            //Conn.Close();
             return list;
         }
     }

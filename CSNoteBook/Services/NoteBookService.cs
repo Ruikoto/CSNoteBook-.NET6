@@ -2,14 +2,13 @@ using System;
 using System.Collections.Generic;
 using CSNoteBook.DAO;
 using CSNoteBook.Models;
-using CSNoteBook.Utils;
 
 namespace CSNoteBook.Services
 {
     public class NoteBookService : INoteBookService
     {
         //private static readonly INoteBookDao Dao = new NoteBookDao();
-        private readonly INoteBookDao _dao = GetDaoFactory.GetDao();
+        private readonly INoteBookDao _dao = NoteBookDao.Instance;
 
         public int NewNote(bool isChecked = false,string title = "",string content = "")
         {

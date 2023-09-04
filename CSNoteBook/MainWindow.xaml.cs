@@ -1,7 +1,5 @@
-﻿using System.Windows;
-using CSNoteBook.DAO;
+﻿using CSNoteBook.DAO;
 using CSNoteBook.Test;
-using CSNoteBook.Utils;
 
 namespace CSNoteBook
 {
@@ -15,7 +13,7 @@ namespace CSNoteBook
       InitializeComponent();
 
       //初始化Dao
-      GetDaoFactory.GetDao().Init();
+      NoteBookDao.Instance.Init();
 
       //调用测试方法
       //Test.Test.TestMethod(null);
