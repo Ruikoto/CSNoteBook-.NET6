@@ -7,14 +7,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a0b4afd5-bac8-4e60-a52c-0606aa7ac4fa" name="更改" comment="Dao/Service Finish">
+    <list default="true" id="a0b4afd5-bac8-4e60-a52c-0606aa7ac4fa" name="更改" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CSNoteBook/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CSNoteBook/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSNoteBook/Dao/INoteBookDao.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CSNoteBook/Dao/INoteBookDao.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CSNoteBook/Dao/NoteBookDao.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CSNoteBook/Dao/NoteBookDao.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSNoteBook/Models/Note.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CSNoteBook/Models/Note.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSNoteBook/Services/INoteBookService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CSNoteBook/Services/INoteBookService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CSNoteBook/Services/NoteBookService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CSNoteBook/Services/NoteBookService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CSNoteBook/Test/Test.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CSNoteBook/Test/Test.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notebook.sqlite" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +48,8 @@
     <setting file="mock://C:/Users/zhenyu.zhang/RiderProjects/CSNoteBook/CSNoteBook/MainWindow.xaml" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/zhenyu.zhang/RiderProjects/CSNoteBook/CSNoteBook/MainWindow.xaml" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/zhenyu.zhang/RiderProjects/CSNoteBook/CSNoteBook/MainWindow.xaml" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/zhenyu.zhang/RiderProjects/CSNoteBook/CSNoteBook/Services/INoteBookService.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/zhenyu.zhang/RiderProjects/CSNoteBook/CSNoteBook/Services/INoteBookService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/zhenyu.zhang/RiderProjects/CSNoteBook/CSNoteBook/Services/NoteBookService.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -70,37 +70,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "settings.qodana",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.qodana&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "sqlite"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;sqlite&quot;
     ],
-    "rider.external.source.directories": [
-      "C:\\Users\\zhenyu.zhang\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\DecompilerCache",
-      "C:\\Users\\zhenyu.zhang\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\SourcesCache",
-      "C:\\Users\\zhenyu.zhang\\AppData\\Local\\Symbols\\src"
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\zhenyu.zhang\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\zhenyu.zhang\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\zhenyu.zhang\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="QodanaCloudProjectLink">
-    <option name="lastReportId" value="EDQeN" />
+    <option name="lastReportId" value="W0DEe" />
     <option name="linkedProjectId" value="37Pl4" />
     <option name="linkedProjectName" value="CSNoteBook" />
     <option name="organizationId" value="3eGZ2" />
@@ -109,7 +109,7 @@
     <option name="cloudReportPersistedInfo">
       <CloudReportPersistedInfo>
         <option name="projectId" value="37Pl4" />
-        <option name="reportId" value="EDQeN" />
+        <option name="reportId" value="W0DEe" />
       </CloudReportPersistedInfo>
     </option>
   </component>
@@ -149,7 +149,8 @@
       <updated>1693530565502</updated>
       <workItem from="1693530566841" duration="638000" />
       <workItem from="1693531223940" duration="672000" />
-      <workItem from="1693531914230" duration="17838000" />
+      <workItem from="1693531914230" duration="17930000" />
+      <workItem from="1693787326069" duration="662000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -207,13 +208,34 @@
       <option name="project" value="LOCAL" />
       <updated>1693557883183</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="妈的，下班走人">
+      <option name="closed" value="true" />
+      <created>1693559803429</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1693559803429</updated>
+    </task>
+    <task id="LOCAL-00009" summary="妈的，下班回家">
+      <option name="closed" value="true" />
+      <created>1693559851741</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1693559851741</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
+  <component name="UnknownFeatures">
+    <option featureType="dependencySupport" implementationName="executable:docker" />
+    <option featureType="dependencySupport" implementationName="executable:kubectl" />
+    <option featureType="dependencySupport" implementationName="dotnet:Microsoft.EntityFrameworkCore.Abstractions" />
+  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
@@ -234,7 +256,9 @@
     <MESSAGE value="DaoFactory &amp; Sqlite Init" />
     <MESSAGE value="TestClass &amp; First Dao Method" />
     <MESSAGE value="Dao/Service Finish" />
-    <option name="LAST_COMMIT_MESSAGE" value="Dao/Service Finish" />
+    <MESSAGE value="妈的，下班走人" />
+    <MESSAGE value="妈的，下班回家" />
+    <option name="LAST_COMMIT_MESSAGE" value="妈的，下班回家" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

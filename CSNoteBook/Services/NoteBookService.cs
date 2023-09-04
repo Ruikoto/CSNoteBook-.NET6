@@ -13,8 +13,8 @@ namespace CSNoteBook.Services
 
         public int NewNote(bool isChecked = false,string title = null,string content = null)
         {
-            var vChecked = isChecked ? 0 : 1;
-            return _dao.NewNote(isChecked,title, content);
+            var vChecked = isChecked ? 1 : 0;
+            return _dao.NewNote(vChecked,title, content);
         }
 
         public void DeleteNote(int id)
@@ -35,10 +35,7 @@ namespace CSNoteBook.Services
             {
                 return _dao.GetNote(id);
             }
-            else
-            {
-                throw new ArgumentException($"Cannot find index: {id}.");
-            }
+            throw new ArgumentException($"Cannot find index: {id}.");
         }
 
         public List<Note> GetAllNote()
@@ -51,11 +48,12 @@ namespace CSNoteBook.Services
             return _dao.GetAllNoteIndex();
         }
 
-        public void EditNote(int id, string title, string content)
+        public void EditNote(int id, bool isChecked, string title, string content)
         {
             if (_dao.IsNoteExist(id))
             {
-                _dao.EditNote(id, title, content);
+                var vChecked = isChecked ? 1 : 0;
+                _dao.EditNote(id, vChecked,title, content);
             }
             else
             {

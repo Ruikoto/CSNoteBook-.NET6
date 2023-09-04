@@ -15,7 +15,7 @@ namespace CSNoteBook.DAO
         {
             Conn.Open();
             using (var cmd = new SQLiteCommand(
-                       "CREATE TABLE IF NOT EXISTS data (" +
+                       "CREATE TABLE IF NOT EXISTS noteData (" +
                        "id INTEGER PRIMARY KEY, " +
                        "is_checked INTEGER, " +
                        "content TEXT," +
@@ -27,14 +27,15 @@ namespace CSNoteBook.DAO
             }
         }
 
-        public int NewNote(string title, string content)
+        public int NewNote(int isChecked, string title, string content)
         {
             Conn.Open();
             using (var cmd = new SQLiteCommand(
-                       "INSERT INTO notebooks(title,content)VALUES (@title,@content);" +
+                       "INSERT INTO noteData(is_checked,title,content)VALUES (@isChecked,@title,@content);" +
                        "SELECT last_insert_rowId();",
                        Conn))
             {
+                cmd.Parameters.AddWithValue("@isChecked", isChecked);
                 cmd.Parameters.AddWithValue("@title", title);
                 cmd.Parameters.AddWithValue("@content", content);
 
@@ -44,13 +45,14 @@ namespace CSNoteBook.DAO
             }
         }
 
-        public void EditNote(int id, string title, string content)
+        public void EditNote(int id, int isChecked, string title, string content)
         {
             Conn.Open();
             using (var cmd = new SQLiteCommand(
-                       "UPDATE notebooks SET title = @title, content = @content WHERE id = @id"
+                       "UPDATE noteData SET is_checked = @isChecked,title = @title, content = @content WHERE id = @id"
                        , Conn))
             {
+                cmd.Parameters.AddWithValue("@isChecked", isChecked);
                 cmd.Parameters.AddWithValue("@id", id);
                 cmd.Parameters.AddWithValue("@title", title);
                 cmd.Parameters.AddWithValue("@content", content);
@@ -64,7 +66,7 @@ namespace CSNoteBook.DAO
         {
             Conn.Open();
             using (var cmd = new SQLiteCommand(
-                       "DELETE FROM notebooks WHERE id = @id", Conn))
+                       "DELETE FROM noteData WHERE id = @id", Conn))
             {
                 cmd.Parameters.AddWithValue("@id", id);
                 cmd.ExecuteNonQuery();
@@ -76,7 +78,7 @@ namespace CSNoteBook.DAO
         {
             Conn.Open();
             using (var cmd = new SQLiteCommand(
-                       "SELECT id FROM notebooks WHERE id = @id", Conn))
+                       "SELECT id FROM noteData WHERE id = @id", Conn))
             {
                 cmd.Parameters.AddWithValue("@id", id);
                 var sqLiteDataReader = cmd.ExecuteReader();
@@ -85,11 +87,9 @@ namespace CSNoteBook.DAO
                     Conn.Close();
                     return true;
                 }
-                else
-                {
-                    Conn.Close();
-                    return false;
-                }
+
+                Conn.Close();
+                return false;
             }
         }
 
@@ -98,15 +98,16 @@ namespace CSNoteBook.DAO
             var note = new Note();
             Conn.Open();
             using (var cmd = new SQLiteCommand(
-                       "SELECT id, title, content FROM notebooks WHERE id = @id", Conn))
+                       "SELECT id, is_checked, title, content FROM noteData WHERE id = @id", Conn))
             {
                 cmd.Parameters.AddWithValue("@id", id);
                 using (var sqLiteDataReader = cmd.ExecuteReader())
                 {
                     sqLiteDataReader.Read();
                     note.Id = sqLiteDataReader.GetInt32(0);
-                    note.Title = sqLiteDataReader.IsDBNull(1) ? null : sqLiteDataReader.GetString(1);
-                    note.Content = sqLiteDataReader.IsDBNull(2) ? null : sqLiteDataReader.GetString(2);
+                    note.IsChecked = sqLiteDataReader.GetInt32(1) != 0;
+                    note.Title = sqLiteDataReader.IsDBNull(2) ? null : sqLiteDataReader.GetString(2);
+                    note.Content = sqLiteDataReader.IsDBNull(3) ? null : sqLiteDataReader.GetString(3);
                 }
             }
 
@@ -119,7 +120,7 @@ namespace CSNoteBook.DAO
             var notes = new List<Note>();
             Conn.Open();
             using (var cmd = new SQLiteCommand(
-                       "SELECT id, title, content FROM notebooks", Conn))
+                       "SELECT id, is_checked, title, content FROM noteData", Conn))
             {
                 using (var sqLiteDataReader = cmd.ExecuteReader())
                 {
@@ -128,8 +129,9 @@ namespace CSNoteBook.DAO
                         var note = new Note
                         {
                             Id = sqLiteDataReader.GetInt32(0),
-                            Title = sqLiteDataReader.IsDBNull(1) ? null : sqLiteDataReader.GetString(1),
-                            Content = sqLiteDataReader.IsDBNull(2) ? null : sqLiteDataReader.GetString(2)
+                            IsChecked = sqLiteDataReader.GetInt32(1) != 0,
+                            Title = sqLiteDataReader.IsDBNull(2) ? null : sqLiteDataReader.GetString(2),
+                            Content = sqLiteDataReader.IsDBNull(3) ? null : sqLiteDataReader.GetString(3)
                         };
                         notes.Add(note);
                     }
@@ -145,7 +147,7 @@ namespace CSNoteBook.DAO
             var list = new List<int>();
             Conn.Open();
             using (var cmd = new SQLiteCommand(
-                       "SELECT id FROM notebooks", Conn))
+                       "SELECT id FROM noteData", Conn))
             {
                 using (var sqLiteDataReader = cmd.ExecuteReader())
                 {

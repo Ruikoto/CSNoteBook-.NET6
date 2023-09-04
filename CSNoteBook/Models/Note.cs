@@ -26,7 +26,7 @@ namespace CSNoteBook.Models
             // ReSharper disable once ConvertIfStatementToReturnStatement
             if (IsChecked)
             {
-                return $@"(✓)Note #{Id}: Title: {Title}, Content: {Content}";
+                return $@"(*)Note #{Id}: Title: {Title}, Content: {Content}";
             }
             else
             {

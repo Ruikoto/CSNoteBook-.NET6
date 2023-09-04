@@ -7,8 +7,8 @@ namespace CSNoteBook.DAO
     public interface INoteBookDao
     {
         void Init();
-        int NewNote(string title, string content);
-        void EditNote(int id, string title, string content);
+        int NewNote(int isChecked, string title, string content);
+        void EditNote(int id, int isChecked, string title, string content);
         void DeleteNote(int id);
         bool IsNoteExist(int id);
         Note GetNote(int id);
