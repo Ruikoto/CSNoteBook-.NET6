@@ -1,4 +1,5 @@
-﻿using CSNoteBook.DAO;
+﻿using System.Windows;
+using CSNoteBook.DAO;
 using CSNoteBook.Test;
 using CSNoteBook.Utils;
 
@@ -12,9 +13,12 @@ namespace CSNoteBook
     public MainWindow()
     {
       InitializeComponent();
-      GetDaoFactory.GetDao().Init();
-      Test.Test.TestMethod(null);
-    }
 
+      //初始化Dao
+      GetDaoFactory.GetDao().Init();
+
+      //调用测试方法
+      //Test.Test.TestMethod(null);
+    }
   }
 }

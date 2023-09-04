@@ -3,11 +3,20 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:CSNoteBook.Views"
+             xmlns:local="clr-namespace:CSNoteBook.Views" 
+             xmlns:viewmodels="clr-namespace:CSNoteBook.ViewModels" 
+             d:DataContext="{d:DesignInstance Type=viewmodels:NotebookViewModel}"
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="400"
              >
-    <ListView ItemsSource="{Binding }">
-
+    <ListView ItemsSource="{Binding Notes}">
+        <ListView.View>
+            <GridView>
+                <GridViewColumn Header="Is Checked" Width="80" DisplayMemberBinding="{Binding IsChecked}" />
+                <GridViewColumn Header="Title" Width="200" DisplayMemberBinding="{Binding Title}" />
+                <GridViewColumn Header="Content" Width="400" DisplayMemberBinding="{Binding Content}" />
+            </GridView>
+        </ListView.View>
     </ListView>
+
 </UserControl>

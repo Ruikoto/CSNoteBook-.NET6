@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using CSNoteBook.ViewModels;
 
 namespace CSNoteBook.Views
 {
@@ -23,6 +24,13 @@ namespace CSNoteBook.Views
         public NoteListView()
         {
             InitializeComponent();
+
+            //绑定DataContext
+            var viewModels = new NotebookViewModel();
+            this.DataContext = viewModels;
+
+            //添加事件，窗口加载完成后加载笔记
+            Loaded += (sender, e)=> viewModels.LoadNotes();
         }
     }
 }
