@@ -1,7 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
 using CSNoteBook.Models;
-using System.Data.SQLite;
+using Microsoft.Data.Sqlite;
 
 
 namespace CSNoteBook.DAO
@@ -10,17 +9,17 @@ namespace CSNoteBook.DAO
     {
         //单例模式
         private static NoteBookDao _instance;
-        public static NoteBookDao Instance => _instance ?? (_instance = new NoteBookDao());
+        public static NoteBookDao Instance => _instance ??= new NoteBookDao();
 
         //数据库连接信息
-        private const string ConnInfo = "Data Source=notebook.sqlite;Version=3;Pooling=True;";
-        private static readonly SQLiteConnection Conn = new SQLiteConnection(ConnInfo);
+        private const string ConnInfo = "Data Source=notebook.sqlite;Pooling=True;";
+        private static readonly SqliteConnection Conn = new(ConnInfo);
 
         //初始化数据库
         public void Init()
         {
             Conn.Open();
-            using (var cmd = new SQLiteCommand(
+            using (var cmd = new SqliteCommand(
                        "CREATE TABLE IF NOT EXISTS noteData (" +
                        "id INTEGER PRIMARY KEY, " +
                        "is_checked INTEGER, " +
@@ -43,7 +42,7 @@ namespace CSNoteBook.DAO
         public int AddNote(int isChecked, string title, string content)
         {
             //Conn.Open();
-            using (var cmd = new SQLiteCommand(
+            using (var cmd = new SqliteCommand(
                        "INSERT INTO noteData(is_checked,title,content)VALUES (@isChecked,@title,@content);" +
                        "SELECT last_insert_rowId();",
                        Conn))
@@ -62,7 +61,7 @@ namespace CSNoteBook.DAO
         public void EditNote(int id, int isChecked, string title, string content)
         {
             //Conn.Open();
-            using (var cmd = new SQLiteCommand(
+            using (var cmd = new SqliteCommand(
                        "UPDATE noteData SET is_checked = @isChecked,title = @title, content = @content WHERE id = @id"
                        , Conn))
             {
@@ -79,7 +78,7 @@ namespace CSNoteBook.DAO
         public void DeleteNote(int id)
         {
             //Conn.Open();
-            using (var cmd = new SQLiteCommand(
+            using (var cmd = new SqliteCommand(
                        "DELETE FROM noteData WHERE id = @id", Conn))
             {
                 cmd.Parameters.AddWithValue("@id", id);
@@ -92,7 +91,7 @@ namespace CSNoteBook.DAO
         public bool IsNoteExist(int id)
         {
             //Conn.Open();
-            using (var cmd = new SQLiteCommand(
+            using (var cmd = new SqliteCommand(
                        "SELECT id FROM noteData WHERE id = @id", Conn))
             {
                 cmd.Parameters.AddWithValue("@id", id);
@@ -107,7 +106,7 @@ namespace CSNoteBook.DAO
         {
             var note = new Note();
             //Conn.Open();
-            using (var cmd = new SQLiteCommand(
+            using (var cmd = new SqliteCommand(
                        "SELECT id, is_checked, title, content FROM noteData WHERE id = @id", Conn))
             {
                 cmd.Parameters.AddWithValue("@id", id);
@@ -129,7 +128,7 @@ namespace CSNoteBook.DAO
         {
             var notes = new List<Note>();
             //Conn.Open();
-            using (var cmd = new SQLiteCommand(
+            using (var cmd = new SqliteCommand(
                        "SELECT id, is_checked, title, content FROM noteData", Conn))
             {
                 using (var sqLiteDataReader = cmd.ExecuteReader())
@@ -156,7 +155,7 @@ namespace CSNoteBook.DAO
         {
             var list = new List<int>();
             //Conn.Open();
-            using (var cmd = new SQLiteCommand(
+            using (var cmd = new SqliteCommand(
                        "SELECT id FROM noteData", Conn))
             {
                 using (var sqLiteDataReader = cmd.ExecuteReader())

@@ -1,7 +1,5 @@
 using System;
-using CSNoteBook.DAO;
 using CSNoteBook.Services;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSNoteBook.Test
 {

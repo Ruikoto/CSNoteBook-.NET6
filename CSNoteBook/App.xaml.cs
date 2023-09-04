@@ -1,17 +1,17 @@
-﻿using System.Windows;
-using CSNoteBook.DAO;
+﻿using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Windows;
 
 namespace CSNoteBook
 {
-  /// <summary>
-  /// Interaction logic for App.xaml
-  /// </summary>
-  public partial class App
-  {
-      //程序退出时关闭数据库
-      private void Application_Exit(object sender, ExitEventArgs e)
-      {
-          NoteBookDao.Instance.Close();
-      }
-  }
+    /// <summary>
+    /// Interaction logic for App.xaml
+    /// </summary>
+    public partial class App : Application
+    {
+    }
 }

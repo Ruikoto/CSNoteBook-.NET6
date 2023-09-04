@@ -22,9 +22,6 @@
         </CheckBox>
         <TextBox x:Name="textBox" Grid.Column="1" VerticalAlignment="Center" Height="30" FontSize="24" Text="{Binding Model.Title, UpdateSourceTrigger=PropertyChanged}" />
         <Button Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"  Height="26" Width="26" BorderBrush="{x:Null}" Command="{Binding SubmitCommand}">
-            <Button.Background>
-                <ImageBrush Stretch="Uniform" ImageSource="/Resources/add_task_FILL0_wght400_GRAD0_opsz24.png"/>
-            </Button.Background>
         </Button>
 
     </Grid>
