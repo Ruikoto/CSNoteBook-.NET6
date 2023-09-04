@@ -4,9 +4,24 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CSNoteBook"
+        xmlns:views="clr-namespace:CSNoteBook.Views"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="CSNoteBook" Height="600" Width="400">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+
+        <Menu Grid.Row="0">
+            <MenuItem Header="Options">
+                <MenuItem Header="Options" />
+                <Separator/>
+                <MenuItem Header="Exit" />
+            </MenuItem>
+        </Menu>
+        <views:NoteListView Grid.Row="1" />
+        <views:AddNoteView Grid.Row="2" />
     </Grid>
 </Window>
