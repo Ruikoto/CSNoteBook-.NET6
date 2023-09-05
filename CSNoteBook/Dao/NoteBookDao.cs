@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using CSNoteBook.Models;
 using Microsoft.Data.Sqlite;
 
-
 namespace CSNoteBook.DAO
 {
     public class NoteBookDao : INoteBookDao
